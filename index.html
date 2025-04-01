@@ -57,8 +57,10 @@
             <nav>
                 <ul>
                     <li><a href="#about" class="nav-link active">ABOUT</a></li>
-                    <li><a href="#resumes" class="nav-link">RESUME</a></li>
+                    <li><a href="#education" class="nav-link">EDUCATION</a></li>
+                    <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
                     <li><a href="#skills" class="nav-link">SKILLS</a></li>
+                    <li><a href="#cv" class="nav-link">CV</a></li>
                     <li><a href="#contact" class="nav-link">CONTACT</a></li>
                 </ul>
             </nav>
@@ -124,47 +126,89 @@
                     </div>
                 </section>
 
-                <section id="resumes" class="section">
-                    <h2 class="section-title">RESUME<span class="blink">_</span></h2>
-                    <div class="resumes-grid">
-                        <div class="resume-card">
-                            <div class="resume-image">
-                                <div class="image-glitch-wrapper">
-                                    <div class="glitch-img" style="background-image: url('resume1.jpg');"></div>
-                                </div>
-                            </div>
-                            <div class="resume-info">
-                                <h3 class="resume-title">RUST_ECHO</h3>
-                                <p class="resume-desc">A high-performance audio processing library with zero-cost abstractions.</p>
-                                <div class="resume-tags">
-                                    <span class="tag">Rust</span>
-                                    <span class="tag">Audio</span>
-                                    <span class="tag">API</span>
-                                </div>
-                                <div class="resume-links">
-                                    <a href="#" class="resume-link">View resume</a>
-                                    <a href="#" class="resume-link">Source Code</a>
-                                </div>
+                <!-- Education Section -->
+                <section id="education" class="section">
+                    <h2 class="section-title">EDUCATION<span class="blink">_</span></h2>
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2020 - 2023</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Master's in Computer Science</h3>
+                                <div class="timeline-subtitle">Technical University of Berlin</div>
+                                <p class="timeline-desc">
+                                    Specialized in Distributed Systems and Parallel Computing. Thesis on "Rust for High-Performance Network Services".
+                                </p>
                             </div>
                         </div>
-
-                        <div class="resume-card">
-                            <div class="resume-image">
-                                <div class="image-glitch-wrapper">
-                                    <div class="glitch-img" style="background-image: url('resume2.jpg');"></div>
-                                </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2016 - 2020</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Bachelor's in Software Engineering</h3>
+                                <div class="timeline-subtitle">University of Casablanca</div>
+                                <p class="timeline-desc">
+                                    Focused on web technologies and system architecture. Graduated with honors.
+                                </p>
                             </div>
-                            <div class="resume-info">
-                                <h3 class="resume-title">VOID_CMS</h3>
-                                <p class="resume-desc">Brutalist content management system for artists and musicians.</p>
-                                <div class="resume-tags">
-                                    <span class="tag">JavaScript</span>
-                                    <span class="tag">Node.js</span>
-                                    <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Work Experience Section -->
+                <section id="experience" class="section">
+                    <h2 class="section-title">WORK<span class="blink">_</span>EXPERIENCE</h2>
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2022 - Present</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Senior Rust Developer</h3>
+                                <div class="timeline-subtitle">Ferrous Systems · Berlin</div>
+                                <ul class="timeline-desc">
+                                    <li>Developed high-performance distributed systems using Rust</li>
+                                    <li>Led a team of 5 engineers on core infrastructure projects</li>
+                                    <li>Contributed to open-source Rust crates with 10k+ downloads</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2020 - 2022</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Full Stack Developer</h3>
+                                <div class="timeline-subtitle">Neon Digital · Berlin</div>
+                                <ul class="timeline-desc">
+                                    <li>Built performant web applications with React and Node.js</li>
+                                    <li>Implemented CI/CD pipelines reducing deployment time by 40%</li>
+                                    <li>Mentored junior developers in TypeScript best practices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CV Download Section -->
+                <section id="cv" class="section">
+                    <h2 class="section-title">DOWNLOAD<span class="blink">_</span>CV</h2>
+                    <div class="cv-container">
+                        <div class="terminal">
+                            <div class="terminal-header">
+                                <span class="terminal-button"></span>
+                                <span class="terminal-button"></span>
+                                <span class="terminal-button"></span>
+                                <span class="terminal-title">cv@haitam</span>
+                            </div>
+                            <div class="terminal-body">
+                                <div class="line">
+                                    <span class="username">user@portfolio</span><span class="separator">:</span><span class="directory">~/cv</span><span class="prompt">$</span>
+                                    <span class="command">ls -l</span>
                                 </div>
-                                <div class="resume-links">
-                                    <a href="#" class="resume-link">View resume</a>
-                                    <a href="#" class="resume-link">Source Code</a>
+                                <div class="line">
+                                    <span class="output">-rw-r--r-- 1 haitam haitam 1.2M Jun 15 2025 <a href="path/to/cv-en.pdf" class="cv-link">haitam_cv_en.pdf</a></span>
+                                </div>
+                                <div class="line">
+                                    <span class="output">-rw-r--r-- 1 haitam haitam 1.3M Jun 15 2025 <a href="path/to/cv-fr.pdf" class="cv-link">haitam_cv_fr.pdf</a></span>
+                                </div>
+                                <div class="line">
+                                    <span class="username">user@portfolio</span><span class="separator">:</span><span class="directory">~/cv</span><span class="prompt">$</span>
+                                    <span class="command blink">_</span>
                                 </div>
                             </div>
                         </div>
