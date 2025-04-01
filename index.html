@@ -188,7 +188,7 @@
                 <section id="cv" class="section">
                     <h2 class="section-title">DOWNLOAD<span class="blink">_</span>CV</h2>
                     <div class="cv-container">
-                        <div class="terminal">
+                        <div class="terminal" id="cv-terminal">
                             <div class="terminal-header">
                                 <span class="terminal-button"></span>
                                 <span class="terminal-button"></span>
@@ -197,18 +197,22 @@
                             </div>
                             <div class="terminal-body">
                                 <div class="line">
-                                    <span class="username">user@portfolio</span><span class="separator">:</span><span class="directory">~/cv</span><span class="prompt">$</span>
-                                    <span class="command">ls -l</span>
+                                    <span class="username">user@portfolio</span><span class="separator">:</span><span class="directory">~</span><span class="prompt">$</span>
+                                    <span class="command typing" id="cv-command-1"></span>
                                 </div>
-                                <div class="line">
+                                <div class="line hidden" id="cv-output-1">
+                                    <span class="username">user@portfolio</span><span class="separator">:</span><span class="directory">~/cv</span><span class="prompt">$</span>
+                                    <span class="command typing" id="cv-command-2"></span>
+                                </div>
+                                <div class="line hidden" id="cv-output-2">
                                     <span class="output">-rw-r--r-- 1 haitam haitam 1.2M Jun 15 2025 <a href="path/to/cv-en.pdf" class="cv-link">haitam_cv_en.pdf</a></span>
                                 </div>
-                                <div class="line">
+                                <div class="line hidden" id="cv-output-3">
                                     <span class="output">-rw-r--r-- 1 haitam haitam 1.3M Jun 15 2025 <a href="path/to/cv-fr.pdf" class="cv-link">haitam_cv_fr.pdf</a></span>
                                 </div>
-                                <div class="line">
+                                <div class="line hidden" id="cv-prompt">
                                     <span class="username">user@portfolio</span><span class="separator">:</span><span class="directory">~/cv</span><span class="prompt">$</span>
-                                    <span class="command blink">_</span>
+                                    <span class="command blink">|</span>
                                 </div>
                             </div>
                         </div>

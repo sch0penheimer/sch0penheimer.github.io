@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupContactForm();
 });
 
-// Terminal animation functions
+// Main Terminals animation functions
 function animateTerminal() {
     const terminalContainer = document.getElementById('terminal-container');
     const mainContent = document.getElementById('main-content');
@@ -83,6 +83,64 @@ function animateTerminal() {
     });
 }
 
+function animateCvTerminal() {
+    const command1 = document.getElementById('cv-command-1');
+    const output1 = document.getElementById('cv-output-1');
+    const command2 = document.getElementById('cv-command-2');
+    const output2 = document.getElementById('cv-output-2');
+    const output3 = document.getElementById('cv-output-3');
+    const prompt = document.getElementById('cv-prompt');
+
+    // Initial delay
+    setTimeout(() => {
+        // Type first command
+        typeText(command1, 'cd cv/', 100, () => {
+            command1.classList.remove('typing');
+            
+            // Show first output line
+            setTimeout(() => {
+                output1.classList.remove('hidden');
+                
+                // Type second command
+                setTimeout(() => {
+                    typeText(command2, 'ls -l', 100, () => {
+                        command2.classList.remove('typing');
+                        
+                        // Show file listings
+                        setTimeout(() => {
+                            output2.classList.remove('hidden');
+                            
+                            setTimeout(() => {
+                                output3.classList.remove('hidden');
+                                
+                                // Show final prompt
+                                setTimeout(() => {
+                                    prompt.classList.remove('hidden');
+                                }, 300);
+                            }, 300);
+                        }, 500);
+                    });
+                }, 800);
+            }, 300);
+        });
+    }, 200);
+}
+
+function resetCvTerminal() {
+    const lines = document.querySelectorAll('#cv-terminal .line');
+    lines.forEach((line, index) => {
+        if (index > 0) { // Keep first line visible
+            line.classList.add('hidden');
+        }
+    });
+    
+    // Reset commands
+    document.getElementById('cv-command-1').textContent = '';
+    document.getElementById('cv-command-1').classList.add('typing');
+    document.getElementById('cv-command-2').textContent = '';
+    document.getElementById('cv-command-2').classList.add('typing');
+}
+
 function initSecondTerminal() {
     const secondTerminal = document.querySelector('.left-column .terminal');
     const initCommand = secondTerminal.querySelector('#init-command');
@@ -131,6 +189,11 @@ function setupSectionNavigation() {
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
                 targetSection.classList.add('active');
+
+                if (targetId === '#cv') {
+                    resetCvTerminal();
+                    animateCvTerminal();
+                }
             }
         });
     });
