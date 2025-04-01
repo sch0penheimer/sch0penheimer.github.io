@@ -430,18 +430,23 @@ function setupSmoothScrolling() {
             
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+            const headerHeight = document.querySelector('header').clientHeight;
+            console.log(headerHeight);
+
             if (targetElement) {
                 // Add glitch effect before scrolling
                 addGlitchEffect(this);
                 
                 // Scroll to target with a slight delay for the glitch effect
                 setTimeout(() => {
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                    
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: offsetPosition,
                         behavior: 'smooth'
                     });
-                }, 200);
+                }, 300);
             }
         });
     });
