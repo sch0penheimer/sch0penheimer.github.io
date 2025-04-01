@@ -401,7 +401,6 @@ nav a:hover {
 .about-content {
     display: flex;
     gap: 2rem;
-    align-items: center;
 }
 
 .about-image {
@@ -952,22 +951,16 @@ h1:hover, h2:hover, .section-title:hover {
 }
 
 .timeline-desc {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     line-height: 1.6;
     opacity: 0.9;
+    margin-left: 3%;
 }
 
 .timeline-desc li {
     margin-bottom: 0.5rem;
     position: relative;
-    padding-left: 1.2rem;
-}
-
-.timeline-desc li::before {
-    content: '»';
-    position: absolute;
-    left: 0;
-    color: var(--rust-orange);
+    padding-left: 2.2rem;
 }
 
 /* CV Download Section */
