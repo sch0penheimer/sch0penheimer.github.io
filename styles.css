@@ -107,7 +107,7 @@ body {
 
 footer {
     width: 100%;
-    padding: 2rem;
+    padding-top: 1rem;
     text-align: center;
     border-top: 1px solid var(--border-color);
     margin-top: 3rem;
@@ -751,14 +751,6 @@ nav a:hover {
 .contact-item i {
     color: var(--rust-orange);
     font-size: 1.2rem;
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    border-top: 1px solid var(--border-color);
-    margin-top: 3rem;
 }
 
 .footer-text {
