@@ -42,7 +42,7 @@ function animateTerminal() {
     const dateTimeString = dateTimeObj.toLocaleString('en-US', { timeZone: 'Africa/Casablanca' });
 
     // Type the initial command
-    typeText(initCommand, '     cat introduction.txt', 100, () => {
+    typeText(initCommand, '     init ./portfolio', 100, () => {
         // After typing initial command, show output lines with delay
         setTimeout(() => {
             initCommand.classList.remove('typing');
@@ -164,8 +164,6 @@ function initSecondTerminal() {
     outputLine3.classList.remove('hidden');
     commandLine2.classList.remove('hidden');
     
-    // Continue the command cycling
-    cycleCommands();
     cycleStatusMessages();
 }
 
@@ -240,14 +238,14 @@ function fadeIn(element, dateTimeElement, date) {
 
 function cycleCommands() {
     const commands = [
-        '       welcome_visitor',
-        'check_status',
-        'optimize_resources',
-        'verify_connections',
-        'scan_memory',
-        'validate_protocols',
-        'secure_channels',
-        'process_requests'
+        '       initialize_system',
+        'load_configuration',
+        'analyze_data',
+        'compile_resources',
+        'synchronize_modules',
+        'deploy_services',
+        'monitor_performance',
+        'finalize_setup'
     ];
     let commandIndex = 0;
     
@@ -269,16 +267,16 @@ function cycleCommands() {
 function cycleStatusMessages() {
     const statusElement = document.getElementById('status');
     const statusMessages = [
-        'CONNECTION_ESTABLISHED',
-        'SERVER_RUNNING',
-        'MEMORY_OPTIMIZED',
-        'ZERO_COST_ABSTRACTIONS',
-        'THREAD_SAFETY_GUARANTEED',
-        'OWNERSHIP_VALIDATED',
-        'RESOURCES_ALLOCATED',
-        'NO_GARBAGE_COLLECTION_NEEDED',
-        'STATIC_DISPATCH_COMPLETE',
-        'PORTFOLIO_LOADED'
+        'POINTERS_INITIALIZED',
+        'MEMORY_ALLOCATED',
+        'STACK_OVERFLOW_AVOIDED',
+        'GARBAGE_COLLECTION_ACTIVE',
+        'THREADS_SYNCHRONIZED',
+        'JAVA_BYTECODE_GENERATED',
+        'CLASSES_COMPILED',
+        'OBJECTS_INSTANTIATED',
+        'EXCEPTIONS_HANDLED',
+        'PROGRAM_EXECUTION_COMPLETE'
     ];
     
     let currentIndex = 0;
