@@ -189,10 +189,16 @@ function setupSectionNavigation() {
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
                 targetSection.classList.add('active');
+                const elements = document.querySelectorAll(".timeline-item");
+                elements.forEach(item => item.classList.remove('visible'));
 
                 if (targetId === '#cv') {
                     resetCvTerminal();
                     animateCvTerminal();
+                } else if (targetId === '#experience' || targetId === '#education') {
+                    setTimeout(() => {
+                        animateTimelineItems(targetId);
+                    }, 800);
                 }
             }
         });
@@ -606,3 +612,19 @@ function animateBlinkingCursors() {
 
 // Start the blinking cursor animation
 animateBlinkingCursors();
+
+// Timeline animation //
+function animateTimelineItems(type) {
+    const timelineItems = document.querySelectorAll(`${type} .timeline-item`);
+
+    timelineItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add('glitch-in');
+            setTimeout(() => {
+                item.classList.remove('glitch-in');
+                item.classList.add('visible');
+            }, 400);
+        }, index * 500); // 300ms delay between each item
+    });
+}
+
