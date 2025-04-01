@@ -62,14 +62,6 @@ body {
     opacity: 1;
 }
 
-header {
-    text-align: center;
-    padding: 2rem 0;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .two-column {
     display: flex;
     width: 100%;
@@ -104,6 +96,8 @@ header {
     display: none;
     min-height: 60vh;
     padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .section.active {
@@ -164,8 +158,9 @@ header {
     padding: 2rem 0;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures header stays above other content */
+    z-index: 1000;
     border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(4px);
 }
 
 .logo {
