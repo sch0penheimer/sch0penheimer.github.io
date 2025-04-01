@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haitam | Post-Punk Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="noise"></div>
+
+    <div class="full-terminal" id="terminal-container">
+        <div class="terminal">
+            <div class="terminal-header">
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+                <span class="terminal-title">terminal@portfolio</span>
+            </div>
+            <div class="terminal-body">
+                <div class="line">
+                    <span class="username">visitor@portfolio</span><span class="separator" style="color: #39ff14">:</span><span class="directory" style="color: #39ff14">~</span><span class="prompt" style="color: #39ff14">$</span> 
+                    <span class="command typing" id="init-command">cat introduction.txt</span>
+                </div>
+                <div class="line hidden" id="output-line-1">
+                    <span class="output"><span id="dateTimeLog1"></span> Welcome to my digital realm. I craft code and design like it's 1979.</span>
+                </div>
+                <div class="line hidden" id="output-line-2">
+                    <span class="output"><span id="dateTimeLog2"></span> Full stack developer with a post-punk aesthetic</span>
+                </div>
+                <div class="line hidden" id="output-line-3">
+                    <span class="output"><span id="dateTimeLog3"></span> Specialized in Rust, JavaScript, and creative coding</span>
+                </div>
+                <div class="line hidden" id="command-line-2">
+                    <span class="username">visitor@portfolio</span><span class="separator" style="color: #39ff14">:</span><span class="directory" style="color: #39ff14">~</span><span class="prompt" style="color: #39ff14">$</span>
+                    <span class="command typing" id="welcome-command"></span>
+                </div>
+                <div class="status-line">
+                    <span id="status">PORTFOLIO_LOADED</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Content Wrapper (Hidden initially) -->
+    <div class="main-content hidden" id="main-content">
+        <!-- Centered Header -->
+        <header>
+            <div class="logo">
+                <div class="rust-icon">
+                    <span class="gear"></span>
+                </div>
+                <h1>HAITAM<span class="blink">_</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="nav-link active">ABOUT</a></li>
+                    <li><a href="#resumes" class="nav-link">RESUME</a></li>
+                    <li><a href="#skills" class="nav-link">SKILLS</a></li>
+                    <li><a href="#contact" class="nav-link">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="two-column">
+            <!-- Left Column (Terminal) -->
+            <div class="left-column">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                        <span class="terminal-title">terminal@portfolio</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="line">
+                            <span class="username">visitor@portfolio</span><span class="separator" style="color: #39ff14">:</span><span class="directory" style="color: #39ff14">~</span><span class="prompt" style="color: #39ff14">$</span> 
+                            <span class="command typing" id="init-command">cat introduction.txt</span>
+                        </div>
+                        <div class="line hidden" id="output-line-1">
+                            <span class="output"><span class="dateTimeLogCurrent"></span> Welcome to my digital realm. I craft code and design like it's 1979.</span>
+                        </div>
+                        <div class="line hidden" id="output-line-2">
+                            <span class="output"><span class="dateTimeLogCurrent"></span> Full stack developer with a post-punk aesthetic</span>
+                        </div>
+                        <div class="line hidden" id="output-line-3">
+                            <span class="output"><span class="dateTimeLogCurrent"></span> Specialized in Rust, JavaScript, and creative coding</span>
+                        </div>
+                        <div class="line hidden" id="command-line-2">
+                            <span class="username">visitor@portfolio</span><span class="separator" style="color: #39ff14">:</span><span class="directory" style="color: #39ff14">~</span><span class="prompt" style="color: #39ff14">$</span>
+                            <span class="command typing" id="welcome-command"></span>
+                        </div>
+                        <div class="status-line">
+                            <span id="status">PORTFOLIO_LOADED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column (Content) -->
+            <div class="right-column">
+                <section id="about" class="section active">
+                    <h2 class="section-title">ABOUT<span class="blink">_</span>ME</h2>
+                    <div class="about-content">
+                        <div class="about-image">
+                            <div class="image-frame">
+                                <img src="assets/profile_photo.png" alt="Haitam Bidiouane">
+                                <div class="image-scanlines"></div>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <p>I'm a developer with an industrial edge and post-punk sensibilities. My work sits at the intersection of brutalist design principles and efficient code architecture.</p>
+                            <p>With 5+ years of experience in web development, I specialize in creating unique digital experiences that break conventional design patterns while maintaining exceptional performance.</p>
+                            <p>When I'm not coding, you'll find me at underground music venues, experimenting with analog synths, or sketching dystopian cityscapes.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="resumes" class="section">
+                    <h2 class="section-title">RESUME<span class="blink">_</span></h2>
+                    <div class="resumes-grid">
+                        <div class="resume-card">
+                            <div class="resume-image">
+                                <div class="image-glitch-wrapper">
+                                    <div class="glitch-img" style="background-image: url('resume1.jpg');"></div>
+                                </div>
+                            </div>
+                            <div class="resume-info">
+                                <h3 class="resume-title">RUST_ECHO</h3>
+                                <p class="resume-desc">A high-performance audio processing library with zero-cost abstractions.</p>
+                                <div class="resume-tags">
+                                    <span class="tag">Rust</span>
+                                    <span class="tag">Audio</span>
+                                    <span class="tag">API</span>
+                                </div>
+                                <div class="resume-links">
+                                    <a href="#" class="resume-link">View resume</a>
+                                    <a href="#" class="resume-link">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resume-card">
+                            <div class="resume-image">
+                                <div class="image-glitch-wrapper">
+                                    <div class="glitch-img" style="background-image: url('resume2.jpg');"></div>
+                                </div>
+                            </div>
+                            <div class="resume-info">
+                                <h3 class="resume-title">VOID_CMS</h3>
+                                <p class="resume-desc">Brutalist content management system for artists and musicians.</p>
+                                <div class="resume-tags">
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">MongoDB</span>
+                                </div>
+                                <div class="resume-links">
+                                    <a href="#" class="resume-link">View resume</a>
+                                    <a href="#" class="resume-link">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills" class="section">
+                    <h2 class="section-title">SKILLS<span class="blink">_</span></h2>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3 class="category-title">LANGUAGES</h3>
+                            <div class="skill-bars">
+                                <div class="skill-item">
+                                    <div class="skill-label">Rust</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-label">JavaScript</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-label">TypeScript</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-label">Python</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-label">C++</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title">FRAMEWORKS</h3>
+                            <div class="skill-bars">
+                                <div class="skill-item">
+                                    <div class="skill-label">React</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-label">Node.js</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 82%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-label">WebGL</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-label">Express</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 78%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-label">Tokio</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="section">
+                    <h2 class="section-title">CONTACT<span class="blink">_</span>ME</h2>
+                    <div class="contact-container">
+                        <div class="contact-form">
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">NAME:</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">EMAIL:</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">SUBJECT:</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">MESSAGE:</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">TRANSMIT MESSAGE</button>
+                            </form>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>contact@haitam.dev</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Berlin, Germany</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Available: Mon-Fri, 10:00-18:00 CET</span>
+                            </div>
+                            <div class="terminal">
+                                <div class="terminal-header">
+                                    <span class="terminal-button"></span>
+                                    <span class="terminal-button"></span>
+                                    <span class="terminal-button"></span>
+                                    <span class="terminal-title">availability@status</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <div class="line">
+                                        <span class="username">system</span><span class="separator" style="color: #39ff14">:~</span><span class="prompt" style="color: #39ff14">$</span> 
+                                        <span class="command">check_resumes_queue</span>
+                                    </div>
+                                    <div class="line">
+                                        <span class="output">» Current resume Load: 65%</span>
+                                    </div>
+                                    <div class="line">
+                                        <span class="output">» Next Availability: June 15th, 2025</span>
+                                    </div>
+                                    <div class="line">
+                                        <span class="output">» Urgent projects: WELCOMED !</span>
+                                    </div>
+                                    <div class="status-line">
+                                        <span>ACCEPTING_NEW_CLIENTS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Full Width Footer -->
+        <footer>
+            <p class="footer-text">Haitam &copy; 2025 | Absolutely No Rights Reserved </p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
