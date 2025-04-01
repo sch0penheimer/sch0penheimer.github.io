@@ -335,7 +335,7 @@ nav a:hover {
 }
 
 .separator {
-    color: var(--text-color);
+    color: var(--neon-green);
     margin-right: 0;
 }
 
