@@ -42,7 +42,7 @@ function animateTerminal() {
     const dateTimeString = dateTimeObj.toLocaleString('en-US', { timeZone: 'Africa/Casablanca' });
 
     // Type the initial command
-    typeText(initCommand, '     init ./portfolio', 100, () => {
+    typeText(initCommand, '     ./portfolio --init', 100, () => {
         // After typing initial command, show output lines with delay
         setTimeout(() => {
             initCommand.classList.remove('typing');
