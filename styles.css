@@ -1,4 +1,3 @@
-/* Post-Punk RUSTy Server Theme */
 @import url('https://fonts.googleapis.com/css2?family=VT323&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
@@ -30,9 +29,6 @@ body {
     position: relative;
 }
 
-/* Add these new styles */
-
-/* Layout Styles */
 .full-terminal {
     position: fixed;
     top: 0;
@@ -50,7 +46,7 @@ body {
 .full-terminal .terminal {
     width: 80%;
     margin: 0 auto;
-    transition: none !important; /* Disable any width transitions */
+    transition: none !important;
 }
 
 .main-content {
@@ -73,12 +69,11 @@ body {
     width: 50%;
     padding-right: 2rem;
     display: flex;
-    align-items: center; /* Vertical centering */
-    justify-content: center; /* Horizontal centering */
+    align-items: center;
+    justify-content: center; 
     top: 0;
 }
 
-/* Make sure the terminal in left column has proper constraints */
 .left-column .terminal {
     width: 100%;
     max-width: 100%;
@@ -113,7 +108,6 @@ footer {
     margin-top: 3rem;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .two-column {
         flex-direction: column;
@@ -130,9 +124,8 @@ footer {
     }
 }
 
-/*********************************************************/
+/*************************************************************************/
 
-/* Noise overlay */
 .noise {
     position: fixed;
     top: 0;
@@ -201,7 +194,6 @@ h1 {
     margin-bottom: 2rem;
 }
 
-/* Navigation */
 nav {
     margin-top: 1.5rem;
 }
@@ -229,7 +221,6 @@ nav a:hover {
     text-shadow: 0 0 8px rgba(228, 63, 32, 0.7);
 }
 
-/* Terminal Styles */
 .terminal-container {
     margin: 3rem 0;
 }
@@ -344,8 +335,6 @@ nav a:hover {
     0%, 100% { opacity: 0.7; }
     50% { opacity: 1; }
 }
-
-/* Section Styles */
 .section-container {
     margin: 5rem 0;
     padding: 2rem;
@@ -362,7 +351,6 @@ nav a:hover {
     text-transform: uppercase;
 }
 
-/* About Section */
 .about-content {
     display: flex;
     gap: 2rem;
@@ -456,31 +444,6 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
-/* resumes Section */
-.resumes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 2rem;
-}
-
-.resume-card {
-    background-color: var(--dark-accent);
-    border: 1px solid var(--border-color);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.resume-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.resume-image {
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-}
-
 .image-glitch-wrapper {
     height: 100%;
     width: 100%;
@@ -500,47 +463,6 @@ nav a:hover {
     transition: filter 0.3s ease;
 }
 
-.resume-card:hover .glitch-img {
-    filter: brightness(1.2) contrast(1.2);
-}
-
-.resume-card:hover .glitch-img::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--rust-orange);
-    opacity: 0.1;
-    mix-blend-mode: overlay;
-}
-
-.resume-info {
-    padding: 1.5rem;
-}
-
-.resume-title {
-    font-family: 'VT323', monospace;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--neon-green);
-    letter-spacing: 1px;
-}
-
-.resume-desc {
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-
-.resume-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
 .tag {
     background-color: var(--industrial-gray);
     color: var(--neon-pink);
@@ -549,40 +471,6 @@ nav a:hover {
     border-radius: 3px;
 }
 
-.resume-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.resume-link {
-    display: inline-block;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-    padding: 0.5rem 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.resume-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--rust-orange);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.resume-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* Skills Section */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -656,7 +544,6 @@ nav a:hover {
     100% { transform: translateX(100%); }
 }
 
-/* Contact Section */
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -740,7 +627,6 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
-/* Animation Keyframes */
 @keyframes glitch {
     0% {
         text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
@@ -765,7 +651,6 @@ nav a:hover {
     }
 }
 
-/* Particle Effects */
 .rust-particles {
     position: fixed;
     top: 0;
@@ -797,7 +682,6 @@ nav a:hover {
     }
 }
 
-/* Glitch Effect Classes */
 .glitch {
     position: relative;
     animation: glitch 500ms infinite;
@@ -807,7 +691,6 @@ h1:hover, h2:hover, .section-title:hover {
     animation: glitch 1s linear infinite;
 }
 
-/* Responsive Styles */
 @media (max-width: 992px) {
     .contact-container {
         grid-template-columns: 1fr;
@@ -838,10 +721,6 @@ h1:hover, h2:hover, .section-title:hover {
 
     .container {
         padding: 1rem;
-    }
-    
-    .resumes-grid {
-        grid-template-columns: 1fr;
     }
     
     .skills-container {
@@ -885,13 +764,11 @@ h1:hover, h2:hover, .section-title:hover {
         padding: 8px;
     }
     
-    /* Adjust the left column terminal specifically */
     .left-column .terminal {
         max-height: 70vh;
         overflow-y: auto;
     }
     
-    /* Make sure text doesn't overflow */
     .line {
         flex-wrap: wrap;
     }
@@ -940,7 +817,6 @@ h1:hover, h2:hover, .section-title:hover {
     }
 }
 
-/* Timeline Styles */
 .timeline-container {
     display: flex;
     flex-direction: column;
@@ -1008,7 +884,6 @@ h1:hover, h2:hover, .section-title:hover {
     padding-left: 2.2rem;
 }
 
-/* CV Download Section */
 .cv-container {
     margin-top: 2rem;
     max-width: 600px;
@@ -1041,7 +916,6 @@ h1:hover, h2:hover, .section-title:hover {
     transform: scaleX(1);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .timeline-item {
         flex-direction: column;
@@ -1054,7 +928,6 @@ h1:hover, h2:hover, .section-title:hover {
     }
 }
 
-/* TimeLine animation */
 .timeline-item {
     opacity: 0;
     transform: translateY(20px);
@@ -1164,7 +1037,6 @@ h1:hover, h2:hover, .section-title:hover {
 }
 
 @media (max-width: 768px) {
-    /* Hamburger menu styles */
     .menu-toggle {
         display: block;
         position: fixed;
@@ -1214,7 +1086,6 @@ h1:hover, h2:hover, .section-title:hover {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Mobile navigation styles */
     nav {
         position: fixed;
         top: 0;
@@ -1247,7 +1118,6 @@ h1:hover, h2:hover, .section-title:hover {
         text-shadow: 0 0 8px rgba(228, 63, 32, 0.7);
     }
 
-    /* Adjust header for mobile */
     header {
         padding: 1rem 0;
         height: auto;
@@ -1261,7 +1131,6 @@ h1:hover, h2:hover, .section-title:hover {
         margin-top: 10px;
     }
 
-    /* Hide tagline on mobile */
     .tagline {
         display: none;
     }
