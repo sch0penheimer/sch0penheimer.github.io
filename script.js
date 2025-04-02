@@ -22,12 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Form validation and submission effect
     setupContactForm();
+
+    setupMobileMenu();
 });
 
 // Main Terminals animation functions
 function animateTerminal() {
     const terminalContainer = document.getElementById('terminal-container');
     const mainContent = document.getElementById('main-content');
+    const menuToggle = document.getElementById('menuToggle');
 
     const initCommand = document.getElementById('init-command');
     const outputLine1 = document.getElementById('output-line-1');
@@ -40,6 +43,8 @@ function animateTerminal() {
     const outputDateTime3 = document.getElementById('dateTimeLog3');
     const dateTimeObj = new Date();
     const dateTimeString = dateTimeObj.toLocaleString('en-US', { timeZone: 'Africa/Casablanca' });
+
+    menuToggle.style.display = 'none';
 
     // Type the initial command
     typeText(initCommand, '     ./portfolio --init', 100, () => {
@@ -73,6 +78,9 @@ function animateTerminal() {
                             // Remove the terminal container completely
                             terminalContainer.remove();
                             
+                            // Show the menu toggle button
+                            menuToggle.style.display = 'block';
+                            
                             // Initialize the second terminal animation
                             initSecondTerminal();
                         }, 2000);
@@ -81,6 +89,7 @@ function animateTerminal() {
             }, 400);
         }, 500);
     });
+
 }
 
 function animateCvTerminal() {
@@ -625,3 +634,20 @@ function animateTimelineItems(type) {
     });
 }
 
+function setupMobileMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('open');
+        nav.classList.toggle('open');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            menuToggle.classList.remove('open');
+            nav.classList.remove('open');
+        });
+    });
+}
