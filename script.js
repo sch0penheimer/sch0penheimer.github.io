@@ -498,7 +498,6 @@ function setupSmoothScrolling() {
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             const headerHeight = document.querySelector('header').clientHeight;
-            console.log(headerHeight);
 
             if (targetElement) {
                 // Add glitch effect before scrolling
