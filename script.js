@@ -1,32 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Terminal animation
     animateTerminal();
-    
-    // Random glitch effects
     setupGlitchEffects();
-    
-    // Rust particles animation
     createRustParticles();
-    
-    // Project card hover effects
     setupProjectCards();
-
-    // Navigation steup
     setupSectionNavigation();
-    
-    // Smooth scrolling for navigation
     setupSmoothScrolling();
-    
-    // Skill bar animation on scroll
     animateSkillBarsOnScroll();
-    
-    // Form validation and submission effect
     setupContactForm();
-
     setupMobileMenu();
 });
 
-// Main Terminals animation functions
 function animateTerminal() {
     const terminalContainer = document.getElementById('terminal-container');
     const mainContent = document.getElementById('main-content');
@@ -46,9 +29,7 @@ function animateTerminal() {
 
     menuToggle.style.display = 'none';
 
-    // Type the initial command
     typeText(initCommand, '     ./portfolio --init', 100, () => {
-        // After typing initial command, show output lines with delay
         setTimeout(() => {
             initCommand.classList.remove('typing');
             fadeIn(outputLine1, outputDateTime1, dateTimeString);
@@ -61,27 +42,18 @@ function animateTerminal() {
                     
                     setTimeout(() => {
                         commandLine2.classList.remove('hidden');
-                        // Start cycling through commands
                         cycleCommands();
-                        
-                        // Start cycling through status messages
                         cycleStatusMessages();
                         
-                        // When animation completes:
                         setTimeout(() => {
-                            // Show main content
                             mainContent.classList.remove('hidden');
                             setTimeout(() => {
                                 mainContent.classList.add('visible');
                             }, 50);
                             
-                            // Remove the terminal container completely
                             terminalContainer.remove();
-                            
-                            // Show the menu toggle button
                             menuToggle.style.display = 'block';
                             
-                            // Initialize the second terminal animation
                             initSecondTerminal();
                         }, 2000);
                     }, 400);
@@ -100,29 +72,23 @@ function animateCvTerminal() {
     const output3 = document.getElementById('cv-output-3');
     const prompt = document.getElementById('cv-prompt');
 
-    // Initial delay
     setTimeout(() => {
-        // Type first command
         typeText(command1, 'cd cv/', 100, () => {
             command1.classList.remove('typing');
             
-            // Show first output line
             setTimeout(() => {
                 output1.classList.remove('hidden');
                 
-                // Type second command
                 setTimeout(() => {
                     typeText(command2, 'ls -l', 100, () => {
                         command2.classList.remove('typing');
                         
-                        // Show file listings
                         setTimeout(() => {
                             output2.classList.remove('hidden');
                             
                             setTimeout(() => {
                                 output3.classList.remove('hidden');
                                 
-                                // Show final prompt
                                 setTimeout(() => {
                                     prompt.classList.remove('hidden');
                                 }, 300);
@@ -138,12 +104,11 @@ function animateCvTerminal() {
 function resetCvTerminal() {
     const lines = document.querySelectorAll('#cv-terminal .line');
     lines.forEach((line, index) => {
-        if (index > 0) { // Keep first line visible
+        if (index > 0) {
             line.classList.add('hidden');
         }
     });
-    
-    // Reset commands
+
     document.getElementById('cv-command-1').textContent = '';
     document.getElementById('cv-command-1').classList.add('typing');
     document.getElementById('cv-command-2').textContent = '';
@@ -164,7 +129,6 @@ function initSecondTerminal() {
         log.textContent = `[${currentTime}]: `;
     });
     
-    // Show all the content immediately since we're continuing the animation
     initCommand.textContent = '     cat introduction.txt';
     initCommand.classList.remove('typing');
     
@@ -184,14 +148,11 @@ function setupSectionNavigation() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Remove active class from all links and sections
             navLinks.forEach(l => l.classList.remove('active'));
             sections.forEach(s => s.classList.remove('active'));
             
-            // Add active class to clicked link
             this.classList.add('active');
             
-            // Show corresponding section
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
@@ -296,9 +257,7 @@ function cycleStatusMessages() {
     }, 4000);
 }
 
-// Glitch effect functions
 function setupGlitchEffects() {
-    // Random glitch on elements
     const glitchableElements = [
         document.querySelector('h1'),
         ...document.querySelectorAll('.section-title'),
@@ -306,11 +265,8 @@ function setupGlitchEffects() {
         ...document.querySelectorAll('.project-title')
     ];
     
-    // Initial glitch after page load
     randomGlitch(glitchableElements);
 
-    
-    // Occasional glitches
     setInterval(() => {
         randomGlitch(glitchableElements);
     }, 3000);
@@ -329,26 +285,22 @@ function addGlitchEffect(element, newText = null) {
     const originalText = element.textContent;
     element.classList.add('glitch');
     
-    // Duration variables 
-    const stageDuration = 200; // How long each scramble stage lasts)
-    const totalStages = 3;     // Total number of scramble stages
+    const stageDuration = 200;
+    const totalStages = 3;
     
     if (newText) {
-        // If new text is provided, we'll switch to it with multiple scramble stages
         let currentStage = 0;
         
         const glitchInterval = setInterval(() => {
             currentStage++;
             
             if (currentStage < totalStages) {
-                // Mix between original and new text as we progress
                 const mixRate = currentStage / totalStages;
                 element.textContent = scrambleText(
                     mixRate > 0.5 ? newText : originalText,
                     0.8 - (currentStage * 0.1)
                 );
             } else {
-                // Final stage
                 element.textContent = newText;
                 element.classList.remove('glitch');
                 clearInterval(glitchInterval);
@@ -356,20 +308,17 @@ function addGlitchEffect(element, newText = null) {
         }, stageDuration);
         
     } else {
-        // Just glitch the current text with multiple scramble stages
         let currentStage = 0;
         
         const glitchInterval = setInterval(() => {
             currentStage++;
             
             if (currentStage < totalStages) {
-                // Gradually reduce scramble intensity
                 element.textContent = scrambleText(
                     originalText,
                     0.8 - (currentStage * 0.15)
                 );
             } else {
-                // Final stage - revert to original
                 element.textContent = originalText;
                 element.classList.remove('glitch');
                 clearInterval(glitchInterval);
@@ -393,18 +342,15 @@ function scrambleText(text) {
     return result;
 }
 
-// Rust particles effect
 function createRustParticles() {
     const rustParticles = document.createElement('div');
     rustParticles.className = 'rust-particles';
     document.body.appendChild(rustParticles);
     
-    // Create initial particles
     for (let i = 0; i < 30; i++) {
         createSingleParticle(rustParticles);
     }
     
-    // Continuously create new particles
     setInterval(() => {
         createSingleParticle(rustParticles);
     }, 200);
@@ -414,72 +360,59 @@ function createSingleParticle(container) {
     const particle = document.createElement('div');
     particle.className = 'rust-particle';
     
-    // Random position, size and opacity
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * window.innerHeight;
     
-    // More pixelated appearance - use integer values and slightly larger sizes
-    const size = Math.floor(Math.random() * 5) + 2; // 2-6px squares for more visibility
-    const opacity = Math.random() * 0.6 + 0.2; // Higher opacity range (0.2-0.8)
+    const size = Math.floor(Math.random() * 5) + 2;
+    const opacity = Math.random() * 0.6 + 0.2;
     
-    // Rust-like colors - array of rust shades
     const rustColors = [
-        '#8B4513', // brown
-        '#A52A2A', // brown/red
-        '#CD5C5C', // indianred
-        '#B22222', // firebrick
-        '#E25822', // rust orange
-        '#6B3E2E', // dark rust
-        '#884535', // rust brown
-        '#CC5500'  // burnt orange
+        '#8B4513',
+        '#A52A2A',
+        '#CD5C5C',
+        '#B22222',
+        '#E25822',
+        '#6B3E2E',
+        '#884535',
+        '#CC5500'
     ];
     
-    // Randomly pick a rust color
     const rustColor = rustColors[Math.floor(Math.random() * rustColors.length)];
     
-    // Set styles
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
-    particle.style.left = `${Math.floor(x)}px`; // Integer values for pixelated look
+    particle.style.left = `${Math.floor(x)}px`; 
     particle.style.top = `${Math.floor(y)}px`;
     particle.style.opacity = opacity.toString();
     particle.style.backgroundColor = rustColor;
-    particle.style.boxShadow = '0 0 2px rgba(255, 100, 0, 0.5)'; // Subtle glow
+    particle.style.boxShadow = '0 0 2px rgba(255, 100, 0, 0.5)';
     
-    // Add to container
     container.appendChild(particle);
     
-    // Add glitching behavior - occasionally move/flicker the particle
     const glitchInterval = setInterval(() => {
         if (Math.random() > 0.7) {
-            // Random position jump (glitch)
-            const jumpX = Math.floor(Math.random() * 5) - 2; // -2 to +2 pixels
+            const jumpX = Math.floor(Math.random() * 5) - 2;
             const jumpY = Math.floor(Math.random() * 5) - 2;
             
             particle.style.transform = `translate(${jumpX}px, ${jumpY}px)`;
             
-            // Occasionally change color too
             if (Math.random() > 0.8) {
                 const newColor = rustColors[Math.floor(Math.random() * rustColors.length)];
                 particle.style.backgroundColor = newColor;
             }
             
-            // Flicker opacity
             particle.style.opacity = (Math.random() * 0.6 + 0.2).toString();
         } else {
-            // Reset transform
             particle.style.transform = 'translate(0, 0)';
         }
-    }, 200); // Glitch check every 200ms
+    }, 200);
     
-    // Remove after animation completes
     setTimeout(() => {
         clearInterval(glitchInterval);
         particle.remove();
-    }, Math.random() * 6000 + 3000); // Slightly shorter lifespan (3-9s)
+    }, Math.random() * 6000 + 3000);
 }
 
-// Project cards interaction
 function setupProjectCards() {
     const projectCards = document.querySelectorAll('.project-card');
     
@@ -496,7 +429,6 @@ function setupProjectCards() {
     });
 }
 
-// Smooth scrolling
 function setupSmoothScrolling() {
     const navLinks = document.querySelectorAll('nav a');
     
@@ -509,10 +441,8 @@ function setupSmoothScrolling() {
             const headerHeight = document.querySelector('header').clientHeight;
 
             if (targetElement) {
-                // Add glitch effect before scrolling
                 addGlitchEffect(this);
                 
-                // Scroll to target with a slight delay for the glitch effect
                 setTimeout(() => {
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
@@ -527,7 +457,6 @@ function setupSmoothScrolling() {
     });
 }
 
-// Skill bars animation
 function animateSkillBarsOnScroll() {
     const skillSection = document.getElementById('skills');
     const skillBars = document.querySelectorAll('.skill-level');
@@ -556,7 +485,6 @@ function isElementInViewport(el) {
     );
 }
 
-// Contact form
 function setupContactForm() {
     const form = document.querySelector('#contact form');
     
@@ -564,14 +492,12 @@ function setupContactForm() {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simple validation
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
             if (name && email && subject && message) {
-                // Create a success message in terminal style
                 const submitBtn = form.querySelector('.submit-btn');
                 submitBtn.textContent = 'TRANSMITTING...';
                 
@@ -579,7 +505,6 @@ function setupContactForm() {
                     submitBtn.classList.add('success');
                     submitBtn.textContent = 'MESSAGE RECEIVED';
                     
-                    // Reset the form after a delay
                     setTimeout(() => {
                         form.reset();
                         submitBtn.textContent = 'TRANSMIT MESSAGE';
@@ -591,7 +516,6 @@ function setupContactForm() {
     }
 }
 
-// Add the noise effect to the background
 function createNoiseEffect() {
     const noise = document.querySelector('.noise');
     
@@ -602,10 +526,6 @@ function createNoiseEffect() {
     }
 }
 
-// Call the noise effect function
-createNoiseEffect();
-
-// Blinking cursor animation for elements with .blink class
 function animateBlinkingCursors() {
     const blinkElements = document.querySelectorAll('.blink');
     
@@ -616,10 +536,6 @@ function animateBlinkingCursors() {
     }, 500);
 }
 
-// Start the blinking cursor animation
-animateBlinkingCursors();
-
-// Timeline animation //
 function animateTimelineItems(type) {
     const timelineItems = document.querySelectorAll(`${type} .timeline-item`);
 
@@ -630,7 +546,7 @@ function animateTimelineItems(type) {
                 item.classList.remove('glitch-in');
                 item.classList.add('visible');
             }, 400);
-        }, index * 500); // 300ms delay between each item
+        }, index * 500);
     });
 }
 
@@ -651,3 +567,6 @@ function setupMobileMenu() {
         });
     });
 }
+
+createNoiseEffect();
+animateBlinkingCursors();
